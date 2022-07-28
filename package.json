@@ -1,0 +1,14 @@
+{
+  "name": "mytype",
+  "version": "1.0.0",
+  "description": "A test for page transition & other effects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rue Lin",
+  "license": "ISC",
+  "dependencies": {
+    "@mojs/core": "^1.3.0"
+  }
+}
