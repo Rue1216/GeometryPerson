@@ -1,5 +1,5 @@
 {
-  "name": "mytype",
+  "name": "Geometry Person",
   "version": "1.0.0",
   "description": "A test for page transition & other effects",
   "main": "index.js",
@@ -9,6 +9,6 @@
   "author": "Rue Lin",
   "license": "ISC",
   "dependencies": {
-    "@mojs/core": "^1.3.0"
+    "gsap": "^3.10.4"
   }
 }
