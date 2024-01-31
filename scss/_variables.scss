@@ -1,37 +1,38 @@
 // colors
-$primary: #1469FF;
-$secondary: #0027C8;
-$notable: #FF3C82;
+$primary: #1469ff;
+$secondary: #0027c8;
+$notable: #ff3c82;
 $white: #fff;
 $black: #000;
 
 // fonts & text style
 
-$fs-title: 64px;
-$fs-subtitle: 36px;
-$fs-subtitle2: 24px;
-$fs-paragraph: 20px;
+$fs-title: 4rem;
+$fs-subtitle: 2.25rem;
+$fs-subtitle2: 1.5rem;
+$fs-paragraph: 1.25rem;
 
 $fw-bold: 700;
 $fw-regular: 400;
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-h1{
-    font-size: $fs-title;
-    font-weight: $fw-bold;
+h1 {
+  font-size: $fs-title;
+  font-weight: $fw-bold;
 }
-h2{
-    font-size: $fs-subtitle;
-    font-weight: $fw-bold;
+h2 {
+  font-size: $fs-subtitle;
+  font-weight: $fw-bold;
 }
-h3{
-    font-size: $fs-subtitle2;
-    font-weight: $fw-regular;
+h3 {
+  font-size: $fs-subtitle2;
+  font-weight: $fw-regular;
 }
-p, a{
-    font-size: $fs-paragraph;
-    font-weight: $fw-regular;
+p,
+a {
+  font-size: $fs-paragraph;
+  font-weight: $fw-regular;
 }
