@@ -19,20 +19,27 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
+h1,
+.h1 {
+  display: block;
   font-size: $fs-title;
   font-weight: $fw-bold;
 }
-h2 {
+h2,
+.h2 {
+  display: block;
   font-size: $fs-subtitle;
   font-weight: $fw-bold;
 }
-h3 {
+h3,
+.h3 {
+  display: block;
   font-size: $fs-subtitle2;
   font-weight: $fw-regular;
 }
 p,
-a {
+a,
+button {
   font-size: $fs-paragraph;
   font-weight: $fw-regular;
 }

@@ -1,17 +1,55 @@
-.wrapper{
-    height: 100vh;
-    width: 100vw;
+// color
+// $primary: #1469ff;
+// $secondary: #0027c8;
+// $notable: #ff3c82;
+// $white: #fff;
+// $black: #000;
+
+.primary {
+  color: $primary;
+}
+.secondary {
+  color: $secondary;
+}
+.notable {
+  color: $notable;
+}
+.white {
+  color: $white;
+}
+.black {
+  color: $black;
 }
 
-.circle{
-    @include circle;
-
+.bg-primary {
+  background-color: $primary;
+}
+.bg-secondary {
+  background-color: $secondary;
+}
+.bg-notable {
+  background-color: $notable;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-black {
+  background-color: $black;
 }
 
-.rectangle{
-    @include rectangle;
+// utilities
+.upper-case {
+  text-transform: uppercase;
 }
-
-.triangle{
-    @include triangle;
+.mb-5 {
+  margin-bottom: 2.5rem;
+}
+.mb-4 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
 }

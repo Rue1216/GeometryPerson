@@ -1,19 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geometry Person</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./scss/all.css">
-    
-</head>
-<body>
-    <h1>GEOMETRY PERSON</h1>
-    <h3>find your core personality type in shapes!</h2>
-    <a href="./views/questions/question1.html">click</a>
-</body>
+    <link
+      rel="shortcut icon"
+      href="/public/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/public/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/public/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/public/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/public/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/all.css" />
+  </head>
+
+  <body class="bg-primary">
+    <section id="opening" class="hidden">
+      <div class="title">
+        <h1 class="white upper-case">Geometry Person</h1>
+        <h2 class="h2 white">find your core personality type in shapes!</h2>
+      </div>
+      <div class="rectangle bg-black"></div>
+      <div class="circle bg-secondary"></div>
+      <div class="star bg-notable"></div>
+    </section>
+    <section id="question-1" class="hidden">
+      <div class="content">
+        <span class="h1 notable mb-3">Q1</span>
+        <h2 class="h2 white mb-3">
+          If one day you get a gift that can change the rule of the world, which
+          ability will you choose?
+        </h2>
+        <p class="h3 secondary mb-4">
+          Choose the answer appeared in your mind instantly
+        </p>
+        <ul>
+          <li>
+            <button type="button" class="option 1-1 mb-2">
+              Destroy all humans in the world
+            </button>
+          </li>
+          <li>
+            <button type="button" class="option 1-2 mb-2">
+              Make the war never happened
+            </button>
+          </li>
+          <li>
+            <button type="button" class="option 1-3">
+              You won’t get old and live forever
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="animating-bg bg-secondary">
+        <div class="rectangle bg-notable"></div>
+        <div class="triangle bg-white"></div>
+        <div class="circle bg-black"></div>
+      </div>
+    </section>
+    <section id="question-2" class="bg-secondary hidden">
+      <div class="content">
+        <span class="h1 notable mb-3">Q2</span>
+        <h2 class="h2 white mb-3">
+          Imagine you’re almost late, but totally lost at a forked road. Which
+          way do you prefer to go?
+        </h2>
+        <p class="h3 primary mb-4">
+          Choose the answer appeared in your mind instantly
+        </p>
+        <ul>
+          <li>
+            <button type="button" class="option 2-1 mb-2">The left one</button>
+          </li>
+          <li>
+            <button type="button" class="option 2-2 mb-2">The right one</button>
+          </li>
+          <li>
+            <button type="button" class="option 2-3">Open Google Map</button>
+          </li>
+        </ul>
+      </div>
+      <div class="animating-bg bg-notable">
+        <div class="triangle bg-white"></div>
+        <div class="rectangle bg-primary"></div>
+        <div class="circle bg-black"></div>
+      </div>
+    </section>
+    <section id="question-3" class="bg-notable hidden">
+      <div class="content">
+        <span class="h1 white mb-3">Q3</span>
+        <h2 class="h2 black mb-3">
+          When you’re in a exam which you barely prepared for, which is your
+          priority solution?
+        </h2>
+        <p class="h3 black mb-4">
+          Choose the answer appeared in your mind instantly
+        </p>
+        <ul>
+          <li>
+            <button type="button" class="option 3-1 mb-2">
+              Take a nap right away
+            </button>
+          </li>
+          <li>
+            <button type="button" class="option 3-2 mb-2">
+              Fill the answer randomly
+            </button>
+          </li>
+          <li>
+            <button type="button" class="option 3-3">
+              All fill the answer "C"
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="animating-bg bg-primary">
+        <div class="circle bg-white"></div>
+        <div class="rectangle bg-secondary"></div>
+        <div class="triangle bg-black"></div>
+      </div>
+    </section>
+    <section id="calculating" class="hidden">
+      <div class="section1 content">
+        <h1 class="text-1 white upper-case">All done!</h1>
+        <h3 class="white">Keep scrolling to show the result</h3>
+      </div>
+      <div class="animation animation1">
+        <div
+          class="triangle triangle1 bg-white"
+          style="height: 5rem; right: 100%; top: 40%; z-index: 4"
+        ></div>
+        <div
+          class="triangle triangle2 bg-secondary"
+          style="
+            height: 12.5rem;
+            right: 120%;
+            top: 35%;
+            transform: rotate(30deg);
+          "
+        ></div>
+        <div
+          class="triangle triangle3 bg-black"
+          style="height: 5rem; right: 150%; top: 50%; transform: rotate(-20deg)"
+        ></div>
+        <div class="triangle bg-black" style="height: 10vw"></div>
+        <div class="triangle bg-secondary" style="height: 20vw"></div>
+        <div class="triangle bg-secondary" style="height: 10vw"></div>
+      </div>
+      <div class="section2 content">
+        <h1 class="text-2 white upper-case">Now calculating</h1>
+        <h3 class="white">Keep scrolling to show the result</h3>
+      </div>
+      <div class="section3 content">
+        <h1 class="text-3 black upper-case">You are…</h1>
+        <h3 class="black">Keep scrolling to show the result</h3>
+      </div>
+    </section>
+    <section id="result" class="bg-white">
+      <div class="type-circle">
+        <div class="content">
+          <p class="h3 black mb-3">Your personality type is</p>
+          <p class="h1 black mb-5">CIRCULAR</p>
+          <div class="details">
+            <ul class="traits white">
+              <li class="mb-3">emotional</li>
+              <li class="mb-3">optimistic</li>
+              <li class="mb-3">empathy</li>
+            </ul>
+            <p class="black mb-5">
+              The circular type people inspire others to achieve and to do good.
+              Always searching for ways to make things better.
+            </p>
+            <button type="button" class="try-again">try again</button>
+          </div>
+        </div>
+        <div class="animating-bg">
+          <div class="blue-circ trait-1" style="left: 10%"></div>
+          <div class="blue-circ trait-2" style="left: 35%"></div>
+          <div class="blue-circ trait-3" style="left: 90%"></div>
+          <div class="black-circ" style="left: 15%"></div>
+          <div class="black-circ" style="left: 65%"></div>
+          <div class="black-circ" style="left: 80%"></div>
+          <div class="primary-circle"></div>
+          <div class="white-circle"></div>
+          <div class="black-circle"></div>
+        </div>
+      </div>
+      <div class="type-rectangle">
+        <div class="content">
+          <p class="h3 white mb-3">Your personality type is</p>
+          <p class="h1 white mb-5">RECTANGLE</p>
+          <div class="details">
+            <ul class="traits notable">
+              <li class="mb-3">energetic</li>
+              <li class="mb-3">friendly</li>
+              <li class="mb-3">intelligent</li>
+            </ul>
+            <p class="white mb-5">
+              The rectangle type people enjoy supporting their friends and doing
+              their best to make sure everyone is happy.
+            </p>
+            <button type="button" class="try-again">try again</button>
+          </div>
+        </div>
+        <div class="animating-bg">
+          <div class="notable-rect trait-1" style="left: 10%"></div>
+          <div class="notable-rect trait-2" style="left: 25%"></div>
+          <div class="notable-rect trait-3" style="left: 80%"></div>
+          <div class="black-rect" style="left: 15%"></div>
+          <div class="black-rect" style="left: 65%"></div>
+          <div class="black-rect" style="left: 95%"></div>
+          <div class="notable-rectangle"></div>
+          <div class="white-rectangle"></div>
+          <div class="black-rectangle"></div>
+        </div>
+      </div>
+      <div class="type-triangle">
+        <div class="content">
+          <p class="h3 white mb-3">Your personality type is</p>
+          <p class="h1 white mb-5">TRIANGLE</p>
+          <div class="details">
+            <ul class="traits secondary">
+              <li class="mb-3">aggressive</li>
+              <li class="mb-3">independent</li>
+              <li class="mb-3">self-motivated</li>
+            </ul>
+            <p class="white mb-5">
+              The triangle type people are natural-born leaders, full of passion
+              and motivation, trying to fix their mistakes as they go.
+            </p>
+            <button type="button" class="try-again">try again</button>
+          </div>
+        </div>
+        <div class="animating-bg">
+          <div class="blue-star trait-1" style="left: 60%"></div>
+          <div class="blue-star trait-2" style="left: 90%"></div>
+          <div class="blue-star trait-3" style="left: 20%"></div>
+          <div class="blue-star" style="left: 28%"></div>
+          <div class="black-star" style="left: 5%"></div>
+          <div class="black-star" style="left: 10%"></div>
+          <div class="black-star" style="left: 80%"></div>
+          <div class="secondary-triangle"></div>
+          <div class="white-triangle"></div>
+          <div class="black-triangle"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="index.js"></script>
 </html>
