@@ -1,18 +1,15 @@
 # GEOMETRY PERSON
 
-[設計稿](https://hexschool.github.io/THE_F2E_Design/week8-parallax%20scrolling/?fbclid=IwAR0tF2sY_Qcakd4fcN-Oy3RL2c36TkBCq4HuHV0DjW6yPcHoM9fqRdaA0oY#artboard0)
+[DEMO -> 建議使用 PC 查看](https://rue1216.github.io/GeometryPerson/)
+[設計稿](https://hexschool.github.io/THE_F2E_Design/week8-parallax%20scrolling/)
 
 ## Tech Stack
 
 1. 使用 HTML / SCSS / JavaScript 完成頁面切版
 2. 分類機制實作
-3. 使用 gsap / barba.js 進行動態效果製作
+3. 使用 GSAP 進行動態效果製作
 
-## 時間紀錄
-
-- 2022/7/28 完成 style 初始建置
-
-用總分級距來產生結果，參考設定如下：
+## 規則
 
 ① 設定選項分數（不一定要按順序）：
 選項一＝ 1 分

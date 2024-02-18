@@ -1536,10 +1536,10 @@ let showResult = () => {
     circular();
   }
 };
-// opening();
+opening();
 // rectangle();
 // circular();
-triangle();
+// triangle();
 const repeatBtn = document.querySelectorAll(".try-again");
 repeatBtn.forEach((btn) => {
   btn.addEventListener(
