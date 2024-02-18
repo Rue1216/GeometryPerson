@@ -38,7 +38,7 @@
   </head>
 
   <body class="bg-primary">
-    <section id="opening">
+    <section id="opening" class="hidden">
       <div class="title">
         <h1 class="white upper-case">Geometry Person</h1>
         <h2 class="h2 white">find your core personality type in shapes!</h2>
@@ -47,7 +47,7 @@
       <div class="circle bg-secondary"></div>
       <div class="star bg-notable"></div>
     </section>
-    <section id="question-1">
+    <section id="question-1" class="hidden">
       <div class="content">
         <span class="h1 notable mb-3">Q1</span>
         <h2 class="h2 white mb-3">
@@ -81,7 +81,7 @@
         <div class="circle bg-black"></div>
       </div>
     </section>
-    <section id="question-2" class="bg-secondary">
+    <section id="question-2" class="bg-secondary hidden">
       <div class="content">
         <span class="h1 notable mb-3">Q2</span>
         <h2 class="h2 white mb-3">
@@ -109,7 +109,7 @@
         <div class="circle bg-black"></div>
       </div>
     </section>
-    <section id="question-3" class="bg-notable">
+    <section id="question-3" class="bg-notable hidden">
       <div class="content">
         <span class="h1 white mb-3">Q3</span>
         <h2 class="h2 black mb-3">
@@ -145,41 +145,22 @@
     </section>
     <section id="calculating">
       <div class="section1 content">
-        <h1 class="text-1 white upper-case">All done!</h1>
-        <h3 class="white">Keep scrolling to show the result</h3>
+        <p class="h1 text-1 white upper-case">All done!</p>
+        <p class="h3 white">Keep scrolling to show the result</p>
       </div>
-      <div class="animation animation1">
-        <div
-          class="triangle triangle1 bg-white"
-          style="height: 5rem; right: 100%; top: 40%; z-index: 4"
-        ></div>
-        <div
-          class="triangle triangle2 bg-secondary"
-          style="
-            height: 12.5rem;
-            right: 120%;
-            top: 35%;
-            transform: rotate(30deg);
-          "
-        ></div>
-        <div
-          class="triangle triangle3 bg-black"
-          style="height: 5rem; right: 150%; top: 50%; transform: rotate(-20deg)"
-        ></div>
-        <div class="triangle bg-black" style="height: 10vw"></div>
-        <div class="triangle bg-secondary" style="height: 20vw"></div>
-        <div class="triangle bg-secondary" style="height: 10vw"></div>
-      </div>
+      <div class="animation animation1"></div>
       <div class="section2 content">
-        <h1 class="text-2 white upper-case">Now calculating</h1>
-        <h3 class="white">Keep scrolling to show the result</h3>
+        <p class="h1 text-2 white upper-case">Now calculating</p>
+        <p class="h3 white">Keep scrolling to show the result</p>
       </div>
+      <div class="animation animation2"></div>
       <div class="section3 content">
-        <h1 class="text-3 black upper-case">You are…</h1>
-        <h3 class="black">Keep scrolling to show the result</h3>
+        <p class="h1 text-3 black upper-case">You are…</p>
+        <p class="h3 black">Keep scrolling to show the result</p>
       </div>
+      <div class="animation animation3"></div>
     </section>
-    <section id="result" class="bg-white">
+    <section id="result" class="bg-white hidden">
       <div class="type-circle">
         <div class="content">
           <p class="h3 black mb-3">Your personality type is</p>

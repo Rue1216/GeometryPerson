@@ -167,8 +167,7 @@ let q3Transition = () => {
     .timeline({
       onComplete: function () {
         document.querySelector("#question-3").remove();
-        // calculating();
-        showResult();
+        calculating();
       },
     })
     .to("#question-3 .content", {
@@ -602,70 +601,85 @@ let question3 = () => {
   return tl;
 };
 let calculating = () => {
-  gsap.fromTo(
-    "#calculating .section1",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      delay: 0.5,
-      ease: "power1.out",
-      duration: 0.5,
-    }
-  );
-  let tl = gsap
-    .timeline({
+  document.querySelector("body").style.overflow = "auto";
+  document.querySelector("body").style.overflowX = "hidden";
+  document.querySelector("body").style.overflowY = "auto";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const colors = ["black", "secondary", "white", "notable", "primary"];
+  const height = [5, 10, 15, 20, 30];
+  const rotate = [15, 30, 60, 90, 180];
+  const delays = [0, 0.5, 1, 1.5, 2];
+  const instanceNumber = 10;
+  const randomize = (limit) => {
+    return Math.floor(Math.random() * (limit - 1));
+  };
+
+  const trianglesContainer = document.querySelector(".animation1");
+  const rectanglesContainer = document.querySelector(".animation2");
+  const circlesContainer = document.querySelector(".animation3");
+  for (let i = 0; i < instanceNumber; i++) {
+    // triangle
+    const triangle = Object.assign(document.createElement("div"), {
+      className: `triangle bg-${colors[randomize(5)]}`,
+      style: `height: ${height[randomize(5)]}rem; transform: rotate(${
+        rotate[randomize(5)]
+      }deg); top: ${5 + i * 2}%;`,
+    });
+    trianglesContainer.appendChild(triangle);
+    gsap.to(triangle, {
+      left: "100%",
       scrollTrigger: {
-        trigger: "#calculating",
-        pin: false,
+        trigger: triangle,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.2,
+        ease: "power1.out",
+        markers: true,
+        delay: delays[randomize(5)],
+      },
+    });
+    // rectangle
+    const rectangle = Object.assign(document.createElement("div"), {
+      className: `rectangle bg-${colors[randomize(5)]}`,
+      style: `height: ${height[randomize(5)]}rem; transform: rotate(${
+        rotate[randomize(5)]
+      }deg); top: ${40 + i * 2}%;`,
+    });
+    rectanglesContainer.appendChild(rectangle);
+    gsap.to(rectangle, {
+      left: "100%",
+      scrollTrigger: {
+        trigger: rectangle,
         start: "top top",
         end: "bottom bottom",
         scrub: 0.1,
         markers: true,
+        delay: delays[randomize(5)],
       },
-    })
-    .fromTo(
-      "#calculating .triangle1",
-      {
-        right: "100%",
-        top: "40%",
-      },
-      {
-        right: "-10%",
-        top: "40%",
-        ease: "power1.out",
-      }
-    )
-    .fromTo(
-      "#calculating .triangle2",
-      {
-        right: "120%",
-        top: "35%",
-      },
-      {
-        right: "-10%",
-        top: "35%",
-        ease: "power1.out",
-      },
-      "<"
-    )
-    .fromTo(
-      "#calculating .triangle3",
-      {
-        right: "100vw",
-        top: "50%",
-      },
-      {
-        right: "-10%",
-        top: "50%",
-        stagger: "0.1",
-        ease: "power1.out",
-      },
-      "<"
-    );
+    });
 
-  return tl;
+    // circle
+    const circle = Object.assign(document.createElement("div"), {
+      className: `circle bg-${colors[randomize(5)]}`,
+      style: `height: ${height[randomize(5)]}rem; transform: rotate(${
+        rotate[randomize(5)]
+      }deg); top: ${70 + i * 2}%;`,
+    });
+    circlesContainer.appendChild(circle);
+    gsap.to(circle, {
+      left: "100%",
+      scrollTrigger: {
+        trigger: circle,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.1,
+        markers: true,
+        delay: delays[randomize(5)],
+      },
+    });
+  }
+  // return tl;
 };
 let triangle = () => {
   document.querySelector("#result").classList.replace("bg-white", "bg-primary");
@@ -1536,7 +1550,8 @@ let showResult = () => {
     circular();
   }
 };
-opening();
+// opening();
+calculating();
 // rectangle();
 // circular();
 // triangle();
