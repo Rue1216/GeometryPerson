@@ -606,10 +606,9 @@ let calculating = () => {
   document.querySelector("body").style.overflowY = "auto";
   gsap.registerPlugin(ScrollTrigger);
 
-  const colors = ["black", "secondary", "white", "notable", "primary"];
   const height = [5, 10, 15, 20, 30];
   const rotate = [15, 30, 60, 90, 180];
-  const delays = [0, 0.5, 1, 1.5, 2];
+  const delays = [0.5, 1, 1.5, 2, 3];
   const instanceNumber = 10;
   const randomize = (limit) => {
     return Math.floor(Math.random() * (limit - 1));
@@ -618,30 +617,33 @@ let calculating = () => {
   const trianglesContainer = document.querySelector(".animation1");
   const rectanglesContainer = document.querySelector(".animation2");
   const circlesContainer = document.querySelector(".animation3");
+  const triangleColors = ["black", "secondary", "notable"];
+  const rectangleColors = ["black", "notable", "primary"];
+  const circularColors = ["white", "secondary", "primary"];
+
   for (let i = 0; i < instanceNumber; i++) {
     // triangle
     const triangle = Object.assign(document.createElement("div"), {
-      className: `triangle bg-${colors[randomize(5)]}`,
+      className: `triangle bg-${triangleColors[randomize(3)]}`,
       style: `height: ${height[randomize(5)]}rem; transform: rotate(${
         rotate[randomize(5)]
-      }deg); top: ${5 + i * 2}%;`,
+      }deg); top: ${10 + i * 2}%;`,
     });
     trianglesContainer.appendChild(triangle);
     gsap.to(triangle, {
-      left: "100%",
+      left: "150%",
       scrollTrigger: {
         trigger: triangle,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.2,
-        ease: "power1.out",
-        markers: true,
+        start: "center bottom",
+        end: "bottom top-=5%",
+        scrub: 0.1,
+        ease: "power1.inOut",
         delay: delays[randomize(5)],
       },
     });
     // rectangle
     const rectangle = Object.assign(document.createElement("div"), {
-      className: `rectangle bg-${colors[randomize(5)]}`,
+      className: `rectangle bg-${rectangleColors[randomize(3)]}`,
       style: `height: ${height[randomize(5)]}rem; transform: rotate(${
         rotate[randomize(5)]
       }deg); top: ${40 + i * 2}%;`,
@@ -651,17 +653,17 @@ let calculating = () => {
       left: "100%",
       scrollTrigger: {
         trigger: rectangle,
-        start: "top top",
-        end: "bottom bottom",
+        start: "center bottom",
+        end: "bottom top-=5%",
         scrub: 0.1,
-        markers: true,
+        ease: "power1.inOut",
         delay: delays[randomize(5)],
       },
     });
 
     // circle
     const circle = Object.assign(document.createElement("div"), {
-      className: `circle bg-${colors[randomize(5)]}`,
+      className: `circle bg-${circularColors[randomize(3)]}`,
       style: `height: ${height[randomize(5)]}rem; transform: rotate(${
         rotate[randomize(5)]
       }deg); top: ${70 + i * 2}%;`,
@@ -671,15 +673,142 @@ let calculating = () => {
       left: "100%",
       scrollTrigger: {
         trigger: circle,
-        start: "top top",
-        end: "bottom bottom",
+        start: "center bottom",
+        end: "bottom top-=5%",
         scrub: 0.1,
-        markers: true,
+        ease: "power1.inOut",
         delay: delays[randomize(5)],
       },
     });
   }
-  // return tl;
+  let tl = gsap
+    .timeline()
+    .to("#calculating .section1", {
+      opacity: 1,
+      duration: 0,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: "#calculating",
+        start: "top top",
+        end: "35% bottom",
+        scrub: 0.1,
+        onEnter: function () {
+          gsap.to("#calculating .section1", {
+            opacity: 1,
+            ease: "power4.out",
+          });
+        },
+        onLeave: function () {
+          gsap.to("#calculating .section1", {
+            opacity: 0,
+            ease: "power4.out",
+          });
+        },
+        onEnterBack: function () {
+          gsap.to("#calculating .section1", {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power4.out",
+          });
+        },
+        onLeaveBack: function () {
+          gsap.to("#calculating .section1", {
+            opacity: 1,
+            duration: 0,
+            ease: "power4.out",
+          });
+        },
+      },
+    })
+    .fromTo(
+      ".animation1 > .transition-bg",
+      {
+        left: "-50%",
+        scale: 1,
+      },
+      {
+        left: "100%",
+        ease: "power1.in",
+        scale: 8,
+        scrollTrigger: {
+          trigger: ".animation1 > .transition-bg",
+          start: "top-=50% center",
+          end: "center bottom",
+          scrub: 0.1,
+        },
+      },
+      "<"
+    )
+    .fromTo(
+      "#calculating .section2",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        ease: "power4.out",
+        yoyo: true,
+        repeat: 1,
+        scrollTrigger: {
+          trigger: "#calculating",
+          start: "35% top",
+          end: "65% bottom",
+          scrub: 0.1,
+        },
+      },
+      "<"
+    )
+    .fromTo(
+      ".animation2 > .transition-bg",
+      {
+        left: "-50%",
+        scale: 1,
+      },
+      {
+        left: "100%",
+        ease: "power1.in",
+        scale: 8,
+        scrollTrigger: {
+          trigger: ".animation2 > .transition-bg",
+          start: "center center",
+          end: "bottom bottom",
+          scrub: 0.1,
+        },
+      },
+      "<"
+    )
+    .fromTo(
+      "#calculating .section3",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#calculating",
+          start: "65% top",
+          end: "95% bottom",
+          scrub: 0.1,
+          onLeave: function () {
+            gsap.to("#calculating", {
+              opacity: 0,
+              duration: 0.5,
+              ease: "power1.out",
+              onComplete: function () {
+                document.querySelector("#calculating").remove();
+                document.querySelector("body").style.overflow = "hidden";
+                document.querySelector("body").style.overflowX = "hidden";
+                document.querySelector("body").style.overflowY = "hidden";
+                showResult();
+              },
+            });
+          },
+        },
+      },
+      "<"
+    );
+  return tl;
 };
 let triangle = () => {
   document.querySelector("#result").classList.replace("bg-white", "bg-primary");
@@ -1550,11 +1679,7 @@ let showResult = () => {
     circular();
   }
 };
-// opening();
-calculating();
-// rectangle();
-// circular();
-// triangle();
+opening();
 const repeatBtn = document.querySelectorAll(".try-again");
 repeatBtn.forEach((btn) => {
   btn.addEventListener(

@@ -251,6 +251,24 @@ button {
       left: -100%;
     }
   }
+  .animation1 > .transition-bg {
+    @include triangle;
+    background: $secondary;
+    height: 10%;
+    position: absolute;
+    top: 45%;
+    left: -50%;
+    transform: translate(-50%, -50%) rotate(50deg) scale(1);
+  }
+  .animation2 > .transition-bg {
+    @include rectangle;
+    background: $notable;
+    height: 10%;
+    position: absolute;
+    top: 60%;
+    left: -50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
 }
 
 // result
