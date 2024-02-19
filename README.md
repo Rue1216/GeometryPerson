@@ -1,8 +1,8 @@
 # GEOMETRY PERSON
 
-- [DEMO -> 建議使用 PC 查看](https://rue1216.github.io/GeometryPerson/)
+![Geometry Person](./public/view.png "Geometry Person")
 
-- [設計稿](https://hexschool.github.io/THE_F2E_Design/week8-parallax%20scrolling/)
+- [DEMO -> 建議使用 PC 查看](https://rue1216.github.io/GeometryPerson/)
 
 ## Tech Stack
 
